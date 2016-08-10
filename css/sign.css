@@ -1,0 +1,34 @@
+
+#sign .inline {
+	float: left;
+	margin-right: 5px;
+}
+
+#sign  .checkbox_and_radiobutton input {
+	float:left;
+	margin: 2px 7px 0px 0px;
+}
+
+#sign a.privacyStatement {
+	float:right;
+}
+
+#sign div.footnotes {
+	clear:left;
+}
+
+#registerUserInfos p {
+	clear:left;
+}
+#otherLanguage label{
+	float:left;
+	padding-right: 10px;
+}
+
+#buttonRegister {
+	float: right;
+}
+
+.error {
+	background-color:yellow;
+}

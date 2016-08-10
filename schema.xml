@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE schema SYSTEM "../../../lib/pkp/dtd/xmlSchema.dtd">
+
+<!--
+  * plugins/generic/registerPage/schema.xml
+  *
+  * Copyright (c) 2016 Language Science Press
+  * Distributed under the GNU GPL v2. For full terms see the file docs/COPYING. 
+  *
+  *
+  -->
+
+<schema version="0.2">
+
+	<!--
+	 *
+	 * TABLE langsci_user_subscriptions
+	 *
+	 -->
+	<table name="langsci_user_subscriptions">
+		<field name="user_id" type="I8">
+			<NOTNULL/>
+		</field>
+		<field name="subscription" type="C2" size="255">
+			<NOTNULL/>
+		</field>
+		<descr>Subscriptions of users like "Newsletter"</descr>
+	</table>
+
+	<!--
+	 *
+	 * TABLE langsci_user_reviewareas
+	 *
+	 -->
+	<table name="langsci_user_reviewareas">
+		<field name="user_id" type="I8">
+			<NOTNULL/>
+		</field>
+		<field name="rank" type="I8">
+			<NOTNULL/>
+		</field>
+		<field name="reviewarea" type="C2" size="255">
+			<NOTNULL/>
+		</field>
+		<descr>review araeas like "syntax"</descr>
+	</table>
+
+	<!--
+	 *
+	 * TABLE langsci_user_reviewlanguages
+	 *
+	 -->
+	<table name="langsci_user_reviewlanguages">
+		<field name="user_id" type="I8">
+			<NOTNULL/>
+		</field>
+		<field name="reviewlanguage" type="C2" size="255">
+			<NOTNULL/>
+		</field>
+		<descr>review languages</descr>
+	</table>
+
+
+</schema>
