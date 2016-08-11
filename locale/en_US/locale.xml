@@ -49,7 +49,7 @@
 		Reader]]></message> 
 <message key="plugins.generic.registerPage.checkboxAuthor"><![CDATA[
 		Author (<a href="../forAuthors">more information</a>)]]></message>
-<message key="plugins.generic.registerPage.checkboxVolumeeditor"><![CDATA[
+<message key="plugins.generic.registerPage.checkboxVolumeEditor"><![CDATA[
 		Volume Editor (<a href="../forAuthors">more information</a>)]]></message>
 <message key="plugins.generic.registerPage.checkboxReviewer"><![CDATA[
 		Reviewer]]></message>
@@ -58,11 +58,6 @@
 <message key="plugins.generic.registerPage.checkboxTypesetter"><![CDATA[
 		L<sup>A</sup>T<sub>E</sub>X Typesetter and subscribe to the LangSci typesetter mailing list.]]></message>
 <message key="plugins.generic.registerPage.checkboxIllustrator"><![CDATA[Illustrator]]></message>
-
-
-
-
-
 
 <message key="plugins.generic.registerPage.checkboxNewsletter">LangSci newsletter</message>
 <message key="plugins.generic.registerPage.checkboxML">LangSci general mailing list</message>
@@ -114,4 +109,4 @@
 <message key="plugins.generic.title.reviewConfigurations">My Review Configurations</message>
 <message key="plugins.generic.title.publicProfile">User Profile</message>
 
-
+</locale> 

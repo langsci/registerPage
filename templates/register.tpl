@@ -216,7 +216,7 @@
    var issetCheckboxIllustrator = "{$issetCheckboxIllustrator}";
    var issetCheckboxReader = "{$issetCheckboxReader}";
    var issetCheckboxAuthor = "{$issetCheckboxAuthor}";
-   var issetCheckboxVolumeeditor = "{$issetCheckboxVolumeeditor}";
+   var issetCheckboxVolumeEditor = "{$issetCheckboxVolumeEditor}";
    var issetCheckboxReviewer = "{$issetCheckboxReviewer}";
    var issetCheckboxProofreader = "{$issetCheckboxProofreader}";
    var issetCheckboxTypesetter = "{$issetCheckboxTypesetter}";
@@ -233,7 +233,7 @@
         document.getElementById("checkboxIllustrator").checked = issetCheckboxIllustrator;
         document.getElementById("checkboxReader").checked = issetCheckboxReader;
         document.getElementById("checkboxAuthor").checked = issetCheckboxAuthor;
-        document.getElementById("checkboxVolumeeditor").checked = issetCheckboxVolumeeditor;
+        document.getElementById("checkboxVolumeEditor").checked = issetCheckboxVolumeEditor;
         document.getElementById("checkboxConfirmation").checked = issetCheckboxConfirmation;
         document.getElementById("checkboxReviewer").checked = issetCheckboxReviewer;
         document.getElementById("checkboxProofreader").checked = issetCheckboxProofreader;

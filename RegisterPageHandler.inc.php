@@ -150,8 +150,6 @@ class RegisterPageHandler extends Handler {
 
 		$captchaCorrect = $issetCheckboxCaptchaCorrect || $captchaAnswer==$captchaSolution;
 
-
-
 		////////////////////////////////////////////////////////////////////////////////
 		// validity check (no -> repeat register.tpl, yes -> write data to database) ///
 		////////////////////////////////////////////////////////////////////////////////
@@ -204,10 +202,11 @@ class RegisterPageHandler extends Handler {
 			$templateMgr->assign('displayCaptcha',false);
 
 			$templateMgr->assign('issetCheckboxSupporter',$issetCheckboxSupporter);
-			$templateMgr->assign('issetCheckboxReader',$issetCheckboxIllustrator);
+			$templateMgr->assign('issetCheckboxIllustrator',$issetCheckboxIllustrator);
 			$templateMgr->assign('issetCheckboxReader',$issetCheckboxReader);
 			$templateMgr->assign('issetCheckboxAuthor',$issetCheckboxAuthor);
 			$templateMgr->assign('issetCheckboxVolumeEditor',$issetCheckboxVolumeEditor);
+
 			$templateMgr->assign('issetCheckboxReviewer',$issetCheckboxReviewer);
 			$templateMgr->assign('issetCheckboxProofreader',$issetCheckboxProofreader);
 			$templateMgr->assign('issetCheckboxTypesetter',$issetCheckboxTypesetter);
@@ -216,7 +215,7 @@ class RegisterPageHandler extends Handler {
 
 			$templateMgr->assign('issetCheckboxConfirmation',$issetCheckboxConfirmation);
 
-			include('include/assignSubscriptionData.inc.php');
+			include('includes/assignSubscriptionData.inc.php');
 			$templateMgr->display($registerPagePlugin->getTemplatePath().'register.tpl');	
 
 		} else {
@@ -290,7 +289,7 @@ class RegisterPageHandler extends Handler {
 			}*/
 
 	 		$hostx = "http://$_SERVER[HTTP_HOST]";
-			$shortUrlx = substr($_SERVER[REQUEST_URI],1,strpos($_SERVER[REQUEST_URI],'user')-1);
+			$shortUrlx = substr($_SERVER['REQUEST_URI'],1,strpos($_SERVER['REQUEST_URI'],'user')-1);
 			$pathx = $hostx ."/".$shortUrlx;
 	
 			$registerPageDAO->setDisabled(1,"account not activated",$userId);

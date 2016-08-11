@@ -26,7 +26,7 @@
 
 {translate|assign:"supporter_text" key="plugins.generic.registerPage.checkboxSupporter"}
 {translate|assign:"author_text" key="plugins.generic.registerPage.checkboxAuthor"}
-{translate|assign:"volumeEditor_text" key="plugins.generic.registerPage.checkboxVolumeeditor"}
+{translate|assign:"volumeEditor_text" key="plugins.generic.registerPage.checkboxVolumeEditor"}
 
 <div class="section">
 

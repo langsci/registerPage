@@ -16,21 +16,22 @@
 
 		$otherLanguage = $_POST['inputOtherLanguage'];
 		$emptyOtherLanguage = empty($otherLanguage);
+		
 		$issetCheckboxSupporter = isset($_POST['checkboxSupporter']);
-		$issetCheckboxIllustrator = isset($_POST['checkboxIllustrator']);
 		$issetCheckboxReader = isset($_POST['checkboxReader']);
 		$issetCheckboxAuthor = isset($_POST['checkboxAuthor']);
 		$issetCheckboxVolumeEditor = isset($_POST['checkboxVolumeEditor']);
 		$issetCheckboxReviewer = isset($_POST['checkboxReviewer']);
 		$issetCheckboxProofreader = isset($_POST['checkboxProofreader']);
 		$issetCheckboxTypesetter = isset($_POST['checkboxTypesetter']);
+		$issetCheckboxIllustrator = isset($_POST['checkboxIllustrator']);
 		$issetCheckboxNewsletter = isset($_POST['checkboxNewsletter']);
 		$issetCheckboxML = isset($_POST['checkboxML']);
 		$issetCheckboxEnglish = isset($_POST['checkboxEnglish']);
 		$issetCheckboxGerman = isset($_POST['checkboxGerman']);
 		$issetCheckboxFrench = isset($_POST['checkboxFrench']);
 		$issetCheckboxOther = isset($_POST['checkboxOther']);
-
+		
 		$areaOkay = !$issetCheckboxReviewer || !$emptyArea1;
 			
 		$languageOkay = false;
