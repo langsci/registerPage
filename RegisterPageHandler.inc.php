@@ -246,7 +246,7 @@ class RegisterPageHandler extends Handler {
 			// reviewer 
 			$groupId = $registerPageDAO->getUserGroupIdByName('Reviewer',$contextId);
 			if ($groupId && $issetCheckboxReviewer) {
-				$registerPageDAO->insertUserGroup($userId,$groupId);
+				$registerPageDAO->insertUserGroup($groupId,$userId);
 				$registerPageDAO->insertArea($userId,1,$area1);
 				if (!empty($area2)) {$registerPageDAO->insertArea($userId,2,$area2);}
 				if (!empty($area3)) {$registerPageDAO->insertArea($userId,3,$area3);}
