@@ -1,0 +1,28 @@
+
+
+#registerPage p.intro {
+    font-weight: bold;
+    padding: 20px 0;
+}
+
+
+.pkp_form .checkbox_and_radiobutton li {
+    list-style: none;
+}
+
+
+.pkp_form .req {
+    color: #cc0000;
+    font-weight: bold;
+    padding-left: 3px;
+}
+
+#registerPage .footnote{
+	margin: 0;	
+}
+
+
+.pkp_form .checkbox_and_radiobutton li label {
+    line-height: 150%;
+    padding: 0 0 5px;
+}

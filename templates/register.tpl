@@ -57,7 +57,7 @@
 		</div>
 
 	</div>
-
+	
 	<div class="sign_inputs">
 
 		<div class="inline">

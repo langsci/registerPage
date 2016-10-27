@@ -1,4 +1,12 @@
 
+#sign div.sign_inputs {
+    height: 60px;
+}
+
+#sign div.footnotes {
+    font-size: 12px;
+}
+
 #sign .inline {
 	float: left;
 	margin-right: 5px;

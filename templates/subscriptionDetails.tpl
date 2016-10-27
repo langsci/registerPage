@@ -114,7 +114,7 @@
 					<li id="otherLanguage">
 						<input id="checkboxOther" name="checkboxOther" type="checkbox"></input>
 						<label>{translate key="plugins.generic.registerPage.checkboxOther"}</label>
-						<input id="inputOtherLanguage" name="inputOtherLanguage" value="{$otherLanguage}" type="text">
+						<input id="inputOtherLanguage" name="inputOtherLanguage" value="{$otherLanguage}" type="text"><br>
 					</li>
 				</ul>
 			<br>
@@ -122,11 +122,10 @@
         {if not $languageOkay}<p class="fieldRequired">{translate key="plugins.generic.registerPage.requiredLanguage"}</p>{/if}
 
 			</div> {**end div: reviewerQuestions**}			
-
 		</li>
 		<li>
 			<input id="checkboxProofreader" name="checkboxProofreader" type="checkbox"></input>
-			<label> {translate key="plugins.generic.registerPage.checkboxProofreader"}</label>
+			<label>{translate key="plugins.generic.registerPage.checkboxProofreader"}</label>
 		</li>
 		<li>
 			<input id="checkboxTypesetter" name="checkboxTypesetter" type="checkbox"></input>
