@@ -229,15 +229,15 @@ class RegisterPageHandler extends Handler {
 			$registerPageDAO = new RegisterPageDAO;
 			$userId = $registerPageDAO->getNextUserId();
 
+			// add data to table 'users'
+			$registerPageDAO ->insertUser($userId,$username,md5($username.$password),$firstName,$lastName,$academicTitle,$email,$userUrl);
+
 			// default: user is included in the hall of fame and has a public profile
 			if ($registerPageDAO->existsTable('langsci_website_settings')) {
 				$registerPageDAO->insertWebsiteSetting($userId,'HallOfFame');
 				$registerPageDAO->insertWebsiteSetting($userId,'PublicProfile');
-			}
-
-			// add data to table 'users'
-			$registerPageDAO ->insertUser($userId,$username,md5($username.$password),$firstName,$lastName,$academicTitle,$email,$userUrl);
-
+			}			
+			
 			// add affiliation to table 'user_settings'
 			$registerPageDAO->insertAffiliation($userId,$affiliation,$locale);
 
@@ -278,15 +278,6 @@ class RegisterPageHandler extends Handler {
 									"\r\n\r\nSincerely,\r\nLanguage Science Press";
 				$confmail->Send();
 			} 
-
-			// email verification /*todo*/
-			// url must work for LangSci urls and local urls 			
-			/*$host = "http://$_SERVER[HTTP_HOST]";
-			$shortUrl = substr($_SERVER[REQUEST_URI],1,strpos($_SERVER[REQUEST_URI], 'user')-1);
-			$nativeUrl = substr($shortUrl ,0,strpos($shortUrl, '/'));
-			if (!$nativeUrl=="") {
-				$nativeUrl = $nativeUrl . "/";
-			}*/
 
 	 		$hostx = "http://$_SERVER[HTTP_HOST]";
 			$shortUrlx = substr($_SERVER['REQUEST_URI'],1,strpos($_SERVER['REQUEST_URI'],'user')-1);
