@@ -33,20 +33,7 @@ class RegisterPageDAO extends DAO {
 		}
 	}
 
-	function checkUserId($user_id) {
-		$result = $this->retrieve(
-			"SELECT user_id FROM users WHERE user_id=". $user_id			
-		);
-
-		if ($result->RecordCount() == 0) {
-			$result->Close();
-			return null;
-		} else {
-			return $user_id;
-		}
-	}
-
-	function checkUsername($username) {
+	function getUserIdByUsername($username) {
 		$result = $this->retrieve(
 			"SELECT user_id FROM users WHERE username = '". $username ."'"			
 		);
@@ -59,50 +46,6 @@ class RegisterPageDAO extends DAO {
 			$result->Close();
 			return $this->convertFromDB($row['user_id'],null);
 		}
-	}
-
-	function getSubmissions($user_group_id, $user_id) {
-
-		$result = $this->retrieve(
-			"SELECT submission_id FROM stage_assignments WHERE
-			user_group_id=".$user_group_id." AND user_id=". $user_id			
-		);
-
-		if ($result->RecordCount() == 0) {
-			$result->Close();
-			return null;
-
-		} else {
-			$submissions = array();
-			while (!$result->EOF) {
-				$row = $result->getRowAssoc(false);
-				$submissions[] = $this->convertFromDB($row['submission_id'],null);
-				$result->MoveNext();
-			}
-			$result->Close();
-
-			return $submissions;
-		}
-
-	}
-
-	function getTitle($submission_id) {
-
-		$result = $this->retrieve(
-			"SELECT setting_value FROM submission_settings
-				WHERE setting_name='title' AND submission_id=". $submission_id			
-		);
-
-		if ($result->RecordCount() == 0) {
-			$result->Close();
-			return null;
-
-		} else {
-			$row = $result->getRowAssoc(false);
-			$result->Close();
-			return $this->convertFromDB($row['setting_value'],null);
-		}
-
 	}
 
 	/**
@@ -234,54 +177,6 @@ class RegisterPageDAO extends DAO {
 		}
 	}
 
-	/**
-	 * Retrieve next user id
-	 * @return nextUserId
-	 */
-	function getNextUserId() {
-
-		$result = $this->retrieve(
-			'SELECT user_id FROM users WHERE user_id=(SELECT MAX(user_id) FROM users)'
-		);
-
-		if ($result->RecordCount() == 0) {
-			$returner = null;
-			$result->Close();
-			return $returner;
-
-		} else {
-			$row = $result->getRowAssoc(false);
-			$nextUserId = $this->convertFromDB($row['user_id'],null)+1;
-			$result->Close();
-
-			return $nextUserId;
-		};
-	}
-
-	/**
-	 * Retrieve user_id by username from tables users
-	 * @return user_id
-	 */
-	function getUserId($username) {
-
-		$result = $this->retrieve(
-			'SELECT user_id FROM users WHERE username="'.$username.'"'
-		);
-
-		if ($result->RecordCount() == 0) {
-			$result->Close();
-			return null;
-
-		} else {
-			$row = $result->getRowAssoc(false);
-			$userId = $this->convertFromDB($row['user_id'],null);
-			$result->Close();
-			return $userId;
-		};
-
-	}
-
-
 	function getUserGroups($username) {
 
 		$result = $this->retrieve(
@@ -403,13 +298,12 @@ class RegisterPageDAO extends DAO {
 		);
 	}
 
-	function insertUser($userId,$username,$password,$firstName,$lastName,$academic_title,$email,$userUrl) {
+	function insertUser($username,$password,$firstName,$lastName,$academic_title,$email,$userUrl) {
 
 		$this->update(
-			'INSERT INTO users (
-				user_id, username, password, first_name, last_name, salutation,email, url, date_registered,disabled)
-				values('.$userId.',"'.$username.'","'.$password.'","'.$firstName.'","'.$lastName.'","'.$academic_title.'","'.$email.'","'.$userUrl.'",NOW(),0)'
-		);
+			'INSERT INTO users (username, password, first_name, last_name, salutation,email, url, date_registered,disabled)
+				values("'.$username.'","'.$password.'","'.$firstName.'","'.$lastName.'","'.$academic_title.'","'.$email.'","'.$userUrl.'",NOW(),0)'
+		);	
 	}
 
 	function insertUserGroup($userGroupId,$userId) {
@@ -455,8 +349,6 @@ class RegisterPageDAO extends DAO {
 		);
 
 	}
-
-
 }
 
 ?>
