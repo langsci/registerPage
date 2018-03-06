@@ -88,18 +88,18 @@ class RegisterPageHandler extends Handler {
 
 		include('includes/getSubscriptionData.inc.php');
 
-		$academicTitle = $_POST['inputAcademicTitle'];
-		$firstName = $_POST['inputFirstName'];
-		$lastName = $_POST['inputLastName'];
-		$username = $_POST['inputUsername'];
-		$password = $_POST['inputPassword'];
-		$password2 = $_POST['inputPassword2'];
-		$affiliation = $_POST['inputAffiliation'];
-		$email = $_POST['inputEmail'];
-		$userUrl = $_POST['inputUserUrl'];
-		$captchaAnswer = $_POST['inputCaptcha'];
-		$captchaQuestion = $_POST['captchaQuestion'];
-		$captchaSolution = $_POST['captchaSolution'];
+		$academicTitle = htmlspecialchars($_POST['inputAcademicTitle']);
+		$firstName = htmlspecialchars($_POST['inputFirstName']);
+		$lastName = htmlspecialchars($_POST['inputLastName']);
+		$username = htmlspecialchars($_POST['inputUsername']);
+		$password = htmlspecialchars($_POST['inputPassword']);
+		$password2 = htmlspecialchars($_POST['inputPassword2']);
+		$affiliation = htmlspecialchars($_POST['inputAffiliation']);
+		$email = htmlspecialchars($_POST['inputEmail']);
+		$userUrl = htmlspecialchars($_POST['inputUserUrl']);
+		$captchaAnswer = htmlspecialchars($_POST['inputCaptcha']);
+		$captchaQuestion = htmlspecialchars($_POST['captchaQuestion']);
+		$captchaSolution = htmlspecialchars($_POST['captchaSolution']);
 		$issetCheckboxCaptchaCorrect = isset($_POST['checkboxCaptchaCorrect']);
 		$issetCheckboxConfirmation = isset($_POST['checkboxConfirmation']);
 

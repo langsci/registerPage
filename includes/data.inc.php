@@ -30,7 +30,9 @@
 		'Discourse Analysis',
 		'Language Documentation',
 		'Multilingualism',
-		'Language and Cognition');
+		'Language and Cognition',
+		'Sign languages',
+		'Writing Research');
 
 	$captchaQuestions=array("What is the color of an orange book?",
 									"Which word is spelled exactly like the word <i>bank</i>?",
