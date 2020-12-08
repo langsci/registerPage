@@ -17,5 +17,5 @@
 	<date>2020-12-07</date>
 	<lazy-load>1</lazy-load>
 	<sitewide>0</sitewide>
-	<class>customRegisterForm</class>
+	<class>customRegisterFormPlugin</class>
 </version>
